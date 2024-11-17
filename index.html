@@ -49,12 +49,13 @@
         <h3>⚠️ Important: Enable Extension Installation</h3>
         <p>First, run these commands in PowerShell as Administrator:</p>
         <p><strong>For Chrome:</strong></p>
-        <code>New-Item -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name ExtensionInstallSources -Force
-New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallSources" -Name "1" -Value "https://subham8907.github.io/web.linkumori/*" -Force</code>
+        <code>reg add HKLM\SOFTWARE\Policies\Google\Chrome\ExtensionInstallAllowlist /v 1 /t REG_SZ /d kcpfnbjlimolkcjllfooaipdpdjmjigg /f</code>
+        <code>reg add HKLM\SOFTWARE\Policies\Google\Chrome\ExtensionInstallSources /v 1 /t REG_SZ /d https://subham8907.github.io/web.linkumori/* /f</code>
+
         
         <p><strong>For Edge:</strong></p>
-        <code>New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name ExtensionInstallSources -Force
-New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources" -Name "1" -Value "https://subham8907.github.io/web.linkumori/*" -Force</code>
+        <code>eg add HKLM:\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist /v 1 /t REG_SZ /d kcpfnbjlimolkcjllfooaipdpdjmjigg /f</code>
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources /v 1 /t REG_SZ /d https://subham8907.github.io/web.linkumori/* /f</code>
     </div>
 
     <div class="info">
