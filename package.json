@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+        "start": "node server.js",
+
     "deploy": "DOMAIN=https://subham8907.github.io/web.linkumori/ node server.js"
   },
   "keywords": ["extension", "chrome", "edge"],
