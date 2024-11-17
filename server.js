@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const PORT = 1001;
+const PORT = 3000;
 
 // GitHub release URLs
 const GITHUB_CRX_URL = 'https://github.com/subham8907/Linkumori/releases/latest/download/Linkumori.crx';
