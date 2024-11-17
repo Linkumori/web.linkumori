@@ -5,7 +5,7 @@
   "scripts": {
         "start": "node server.js",
 
-    "deploy": "DOMAIN=https://subham8907.github.io/web.linkumori/ node server.js"
+    "deploy": "DOMAIN=https://web-linkumori.pages.dev// node server.js"
   },
   "keywords": ["extension", "chrome", "edge"],
   "author": "",
