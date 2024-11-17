@@ -3,11 +3,11 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const DOMAIN = process.env.DOMAIN || 'https://web-linkumori.pages.dev/';
+const PORT = 1001;
 
 // GitHub release URLs
-const GITHUB_CRX_URL = 'https://github.com/subham8907/Linkumori/releases/download/B45/Linkumori.crx';
-const GITHUB_UPDATE_URL = 'https://github.com/subham8907/Linkumori/releases/download/B45/updates.xml';
+const GITHUB_CRX_URL = 'https://github.com/subham8907/Linkumori/releases/latest/download/Linkumori.crx';
+const GITHUB_UPDATE_URL = 'https://github.com/subham8907/Linkumori/releases/latest/download/updates.xml';
 
 // Proxy the extension file with correct MIME type
 app.get('/extension.crx', async (req, res) => {
@@ -43,15 +43,11 @@ app.get('/updates.xml', async (req, res) => {
 
 // Serve the landing page
 app.get('/', (req, res) => {
-    const baseUrl = DOMAIN.replace(/\/$/, ''); // Remove trailing slash if present
-
     res.send(`
         <!DOCTYPE html>
         <html>
         <head>
             <title>Linkumori Extension Download</title>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <style>
                 body { 
                     font-family: Arial, sans-serif; 
@@ -100,11 +96,11 @@ app.get('/', (req, res) => {
                 <p>First, run these commands in PowerShell as Administrator:</p>
                 <p><strong>For Chrome:</strong></p>
                 <code>New-Item -Path "HKLM:\\SOFTWARE\\Policies\\Google\\Chrome" -Name ExtensionInstallSources -Force
-New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Google\\Chrome\\ExtensionInstallSources" -Name "1" -Value "${baseUrl}/*" -Force</code>
+New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Google\\Chrome\\ExtensionInstallSources" -Name "1" -Value "http://localhost:3000/*" -Force</code>
                 
                 <p><strong>For Edge:</strong></p>
                 <code>New-Item -Path "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge" -Name ExtensionInstallSources -Force
-New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallSources" -Name "1" -Value "${baseUrl}/*" -Force</code>
+New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallSources" -Name "1" -Value "http://localhost:3000/*" -Force</code>
             </div>
 
             <div class="info">
@@ -120,41 +116,21 @@ New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionIns
             </div>
 
             <a href="/extension.crx" class="button">Download Extension</a>
-
-            <script>
-                // Add automatic copy functionality for commands
-                document.querySelectorAll('code').forEach(block => {
-                    block.style.cursor = 'pointer';
-                    block.title = 'Click to copy';
-                    block.onclick = function() {
-                        navigator.clipboard.writeText(this.textContent.trim())
-                            .then(() => {
-                                const originalBg = this.style.background;
-                                this.style.background = '#90EE90';
-                                setTimeout(() => {
-                                    this.style.background = originalBg;
-                                }, 200);
-                            });
-                    };
-                });
-            </script>
         </body>
         </html>
     `);
 });
 
 // Start the server
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`Server running at ${DOMAIN}`);
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
     console.log('\nRun these commands in PowerShell as Administrator to enable installation:');
-    
-    const baseUrl = DOMAIN.replace(/\/$/, ''); // Remove trailing slash if present
     
     console.log('\nFor Chrome:');
     console.log('New-Item -Path "HKLM:\\SOFTWARE\\Policies\\Google\\Chrome" -Name ExtensionInstallSources -Force');
-    console.log(`New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Google\\Chrome\\ExtensionInstallSources" -Name "1" -Value "${baseUrl}/*" -Force`);
+    console.log('New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Google\\Chrome\\ExtensionInstallSources" -Name "1" -Value "http://localhost:3000/*" -Force');
     
     console.log('\nFor Edge:');
     console.log('New-Item -Path "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge" -Name ExtensionInstallSources -Force');
-    console.log(`New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallSources" -Name "1" -Value "${baseUrl}/*" -Force`);
+    console.log('New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallSources" -Name "1" -Value "http://localhost:3000/*" -Force');
 });
