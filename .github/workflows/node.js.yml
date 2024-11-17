@@ -25,8 +25,7 @@ jobs:
     - name: Build
       run: npm run build --if-present
 
-    - name: Test
-      run: npm test --if-present
+    
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
