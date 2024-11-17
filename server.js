@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const app = express();
 const PORT = process.env.PORT || 4001;
-const DOMAIN = process.env.DOMAIN || 'localhost';
+const DOMAIN = process.env.DOMAIN || 'https://subham8907.github.io/web.linkumori/';
 
 // GitHub release URLs
 const GITHUB_CRX_URL = 'https://github.com/subham8907/Linkumori/releases/download/B45/Linkumori.crx';
