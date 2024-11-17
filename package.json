@@ -1,19 +1,22 @@
 {
-  "name": "new-folder",
+  "name": "linkumori-extension-server",
   "version": "1.0.0",
-  "main": "proxy.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node proxy.js",
-    "build": "node proxy.js",
-    "dev": "node proxy.js"
+    "start": "node server.js",
+    "build": "node server.js",
+    "dev": "PORT=4001 DOMAIN=localhost node server.js",
+    "production": "PORT=80 DOMAIN=your-domain.com node server.js"
   },
-  "keywords": [],
+  "keywords": ["extension", "chrome", "edge"],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Extension distribution server for Linkumori",
   "dependencies": {
     "axios": "^1.7.7",
     "express": "^4.21.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
