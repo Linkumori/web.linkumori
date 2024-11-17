@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const DOMAIN = process.env.DOMAIN || 'https://subham8907.github.io/web.linkumori/';
+const DOMAIN = process.env.DOMAIN || 'https://web-linkumori.pages.dev/';
 
 // GitHub release URLs
 const GITHUB_CRX_URL = 'https://github.com/subham8907/Linkumori/releases/download/B45/Linkumori.crx';
