@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linkumori Extension Download</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 2em auto; 
+            padding: 0 1em; 
+            line-height: 1.6;
+            color: #333;
+        }
+        .button { 
+            display: inline-block; 
+            padding: 12px 24px; 
+            background: #4CAF50; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            margin: 1em 0;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #45a049;
+        }
+        .info { 
+            background: #f8f9fa; 
+            padding: 1.5em; 
+            border-radius: 8px; 
+            margin: 1.5em 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .warning { 
+            background: #fff3cd; 
+            border: 1px solid #ffeeba; 
+            padding: 1.5em; 
+            border-radius: 8px; 
+            margin: 1.5em 0;
+        }
+        code { 
+            background: #e9ecef; 
+            padding: 0.8em 1em; 
+            border-radius: 6px;
+            display: block;
+            white-space: pre-wrap;
+            margin: 0.8em 0;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5em;
+        }
+        h2, h3 {
+            color: #2c3e50;
+        }
+        ol li {
+            margin-bottom: 0.8em;
+        }
+        .version-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 2em;
+            text-align: center;
+        }
+        #status {
+            display: none;
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 5px;
+        }
+        .status-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .status-error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Linkumori Extension</h1>
+    
+    <div class="warning">
+        <h3>⚠️ Important: Enable Extension Installation</h3>
+        <p>First, run these commands in PowerShell as Administrator:</p>
+        <p><strong>For Chrome:</strong></p>
+        <code>New-Item -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name ExtensionInstallSources -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallSources" -Name "1" -Value "https://YOUR-USERNAME.github.io/*" -Force</code>
+        
+        <p><strong>For Edge:</strong></p>
+        <code>New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name ExtensionInstallSources -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources" -Name "1" -Value "https://YOUR-USERNAME.github.io/*" -Force</code>
+    </div>
+
+    <div class="info">
+        <h2>Installation Steps:</h2>
+        <ol>
+            <li>Run the above commands in PowerShell as Administrator (replace YOUR-USERNAME with your GitHub username)</li>
+            <li>Restart your browser</li>
+            <li>Click the download button below</li>
+            <li>Go to chrome://extensions or edge://extensions</li>
+            <li>Enable Developer Mode (toggle in top right)</li>
+            <li>Drag and drop the downloaded .crx file into the extensions page</li>
+        </ol>
+    </div>
+
+    <div id="status"></div>
+    <button onclick="downloadExtension()" class="button">Download Extension</button>
+
+    <div class="version-info">
+        Current Version: <span id="currentVersion">Loading...</span> | 
+        <a href="https://github.com/subham8907/Linkumori/releases">View all releases</a>
+    </div>
+
+    <script>
+        const GITHUB_CRX_URL = 'https://github.com/subham8907/Linkumori/releases/download/B45/Linkumori.crx';
+        const GITHUB_UPDATE_URL = 'https://github.com/subham8907/Linkumori/releases/download/B45/updates.xml';
+        
+        async function downloadExtension() {
+            const status = document.getElementById('status');
+            status.style.display = 'block';
+            status.innerHTML = '<span class="loading"></span> Downloading extension...';
+            status.className = '';
+
+            try {
+                // Fetch the extension file
+                const response = await fetch(GITHUB_CRX_URL);
+                if (!response.ok) throw new Error('Download failed');
+
+                // Convert the response to a blob with the correct MIME type
+                const blob = await response.blob();
+                const crxBlob = new Blob([blob], { type: 'application/x-chrome-extension' });
+
+                // Create a download link and trigger it
+                const url = window.URL.createObjectURL(crxBlob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Linkumori.crx';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+
+                status.innerHTML = '✅ Extension downloaded successfully! Follow the installation steps above.';
+                status.className = 'status-success';
+            } catch (error) {
+                console.error('Error downloading extension:', error);
+                status.innerHTML = '❌ Error downloading extension. Please try again or download directly from GitHub.';
+                status.className = 'status-error';
+            }
+        }
+
+        // Function to fetch update manifest and get current version
+        async function fetchCurrentVersion() {
+            try {
+                const response = await fetch(GITHUB_UPDATE_URL);
+                const text = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(text, "text/xml");
+                const version = xmlDoc.querySelector("updatecheck")?.getAttribute("version") || "B45";
+                document.getElementById('currentVersion').textContent = version;
+            } catch (error) {
+                console.error('Error fetching version:', error);
+                document.getElementById('currentVersion').textContent = "B45";
+            }
+        }
+
+        // Add manifest URLs to the page for auto-updates
+        const updateLink = document.createElement('link');
+        updateLink.rel = 'chromium-webstore-item';
+        updateLink.href = GITHUB_UPDATE_URL;
+        document.head.appendChild(updateLink);
+
+        // Fetch current version when page loads
+        fetchCurrentVersion();
+    </script>
+</body>
+</html>
