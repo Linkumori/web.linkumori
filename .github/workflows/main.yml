@@ -1,0 +1,60 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4.1.0
+      with:
+        node-version: '18.x'  # Using Node.js 18 as it's LTS and compatible with Express 4.21
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Verify server starts
+      run: |
+        npm start & sleep 5
+        curl -f http://localhost:3299 || exit 1
+        pkill -f "node server.js"
+        
+    - name: Check for correct MIME types
+      run: |
+        # Install curl for testing
+        sudo apt-get update && sudo apt-get install -y curl
+        
+        # Start server in background
+        npm start &
+        sleep 5
+        
+        # Test MIME types
+        MIME_CRX=$(curl -I http://localhost:3299/extension.crx 2>/dev/null | grep "Content-Type" | tr -d '\r')
+        MIME_XML=$(curl -I http://localhost:3299/updates.xml 2>/dev/null | grep "Content-Type" | tr -d '\r')
+        
+        # Check results
+        echo "CRX MIME type: $MIME_CRX"
+        echo "XML MIME type: $MIME_XML"
+        
+        # Kill server
+        pkill -f "node server.js"
+        
+        # Verify MIME types
+        if [[ "$MIME_CRX" != *"application/x-chrome-extension"* ]]; then
+          echo "Error: Incorrect MIME type for .crx file"
+          exit 1
+        fi
+        
+        if [[ "$MIME_XML" != *"application/xml"* ]]; then
+          echo "Error: Incorrect MIME type for .xml file"
+          exit 1
+        fi
