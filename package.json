@@ -1,32 +1,19 @@
 {
-  "name": "panel",
+  "name": "new-folder",
   "version": "1.0.0",
   "main": "proxy.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "echo \"No build step required\"",
-    "test": "echo \"No test specified\" && exit 0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/subham8907/web.linkumori/"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node proxy.js",
+    "build": "node proxy.js",
+    "dev": "node proxy.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/subham8907/web.linkumori/issues"
-  },
-  "homepage": "https://subham8907.github.io/web.linkumori/",
+  "description": "",
   "dependencies": {
     "axios": "^1.7.7",
     "express": "^4.21.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
-  },
-  "engines": {
-    "node": ">=14.0.0"
   }
 }
