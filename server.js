@@ -3,7 +3,6 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const PORT = process.env.PORT || 4001;
 const DOMAIN = process.env.DOMAIN || 'https://subham8907.github.io/web.linkumori/';
 
 // GitHub release URLs
@@ -44,9 +43,7 @@ app.get('/updates.xml', async (req, res) => {
 
 // Serve the landing page
 app.get('/', (req, res) => {
-    const protocol = req.protocol;
-    const host = req.get('host');
-    const baseUrl = `${protocol}://${host}`;
+    const baseUrl = DOMAIN.replace(/\/$/, ''); // Remove trailing slash if present
 
     res.send(`
         <!DOCTYPE html>
@@ -147,11 +144,11 @@ New-ItemProperty -Path "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionIns
 });
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server running at http://${DOMAIN}:${PORT}`);
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server running at ${DOMAIN}`);
     console.log('\nRun these commands in PowerShell as Administrator to enable installation:');
     
-    const baseUrl = `http://${DOMAIN}:${PORT}`;
+    const baseUrl = DOMAIN.replace(/\/$/, ''); // Remove trailing slash if present
     
     console.log('\nFor Chrome:');
     console.log('New-Item -Path "HKLM:\\SOFTWARE\\Policies\\Google\\Chrome" -Name ExtensionInstallSources -Force');
