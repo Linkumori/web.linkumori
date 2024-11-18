@@ -96,7 +96,7 @@
     <footer class="bg-white mt-auto">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="mt-8 md:mt-0 md:order-1">
-                <p class="text-center text-base text-gray-400">&copy; 2024 Linkumori. All rights reserved.</p>
+                <p class="text-center text-base text-gray-400">&copy; 2024 Subham Mahesh All rights reserved for applicable part only.</p>
                 <p class="text-center text-base text-gray-400 mt-2">
                     <a href="#dependencies" class="nav-item text-gray-500 hover:text-gray-700" data-page="dependencies">Legal</a>
                 </p>
@@ -108,87 +108,181 @@
         // Page content
         const pageContent = {
             home: `
-                <div class="bg-white">
-                    <div class="relative bg-gray-50 overflow-hidden">
-                        <div class="max-w-7xl mx-auto">
-                            <div class="relative z-10 pb-8 bg-gray-50 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                                    <div class="sm:text-center lg:text-left">
-                                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                                            <span class="block xl:inline">Protect your privacy with</span>
-                                            <span class="block text-blue-600 xl:inline">Linkumori</span>
-                                        </h1>
-                                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                                            Linkumori is your shield against invasive tracking and data collection. 
-                                            Clean your URLs, safeguard your digital footprint, and browse with confidence.
-                                        </p>
-                                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                                            <div class="rounded-md shadow">
-                                                <a href="https://github.com/subham8907/Linkumori/releases/latest/download/Linkumori.crx"
-                                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
-                                                    <i data-lucide="download" class="mr-2 h-4 w-4"></i> Install Linkumori
-                                                </a>
-                                            </div>
-                                            <div class="mt-3 sm:mt-0 sm:ml-3">
-                                                <a href="https://github.com/subham8907/Linkumori"
-                                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-                                                    <i data-lucide="github" class="mr-2 h-4 w-4"></i> View on GitHub
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </main>
+<div class="bg-white">
+    <!-- Hero Section -->
+    <div class="relative bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-gray-50 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block xl:inline">Protect your privacy with</span>
+                            <span class="block text-blue-600 xl:inline">Linkumori</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Linkumori is your shield against invasive tracking and data collection. 
+                            Clean your URLs, safeguard your digital footprint, and browse with confidence.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="https://github.com/subham8907/Linkumori/releases/latest/download/Linkumori.crx"
+                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
+                                    <i data-lucide="download" class="mr-2 h-4 w-4"></i> Install Linkumori
+                                </a>
                             </div>
-                        </div>
-                        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-56 lg:w-56 xl:h-64 xl:w-64">
-                                <circle cx="50" cy="50" r="45" fill="#4299e1"/>
-                                <path d="M35 50 Q35 35, 50 35 L65 35 Q80 35, 80 50 Q80 65, 65 65 L60 65" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
-                                <path d="M65 50 Q65 65, 50 65 L35 65 Q20 65, 20 50 Q20 35, 35 35 L40 35" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
-                                <polygon points="75,20 78,28 86,31 78,34 75,42 72,34 64,31 72,28" fill="white"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- Feature section -->
-                    <div class="py-12 bg-white">
-                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div class="lg:text-center">
-                                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Features</h2>
-                                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                                    A better way to protect your online privacy
-                                </p>
-                                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                                    Linkumori offers cutting-edge technology to ensure your browsing remains private and secure.
-                                </p>
-                            </div>
-
-                            <div class="mt-10">
-                                <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10" id="featureCards">
-                                    <!-- Feature cards will be dynamically inserted here -->
-                                </dl>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="https://github.com/subham8907/Linkumori"
+                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                                    <i data-lucide="github" class="mr-2 h-4 w-4"></i> View on GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-56 lg:w-56 xl:h-64 xl:w-64">
+                <circle cx="50" cy="50" r="45" fill="#4299e1"/>
+                <path d="M35 50 Q35 35, 50 35 L65 35 Q80 35, 80 50 Q80 65, 65 65 L60 65" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                <path d="M65 50 Q65 65, 50 65 L35 65 Q20 65, 20 50 Q20 35, 35 35 L40 35" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                <polygon points="75,20 78,28 86,31 78,34 75,42 72,34 64,31 72,28" fill="white"/>
+            </svg>
+        </div>
+    </div>
 
-                    <!-- CTA section -->
-                    <div class="bg-blue-50">
-                        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-                            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                                <span class="block">Ready to take control of your privacy?</span>
-                                <span class="block text-blue-600">Install Linkumori today.</span>
-                            </h2>
-                            <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-                                <div class="inline-flex rounded-md shadow">
-                                    <a href="https://github.com/subham8907/Linkumori/releases/latest/download/Linkumori.crx"
-                                       class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-                                        Get started
-                                    </a>
-                                </div>
-                            </div>
+    <!-- Installation Guide Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:text-center mb-8">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Installation Guide</h2>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Follow these steps to install Linkumori on your browser</p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Windows Section -->
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                <h3 class="flex items-center text-lg font-semibold text-amber-800 mb-4">
+                    <i data-lucide="windows" class="w-5 h-5 mr-2"></i>
+                    Windows Installation
+                </h3>
+                <div class="space-y-4">
+                    <p class="text-gray-700">Run in PowerShell as Admin:</p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-gray-900">Chrome:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>reg add HKLM\\SOFTWARE\\Policies\\Google\\Chrome\\ExtensionInstallAllowlist /v 1 /t REG_SZ /d kcpfnbjlimolkcjllfooaipdpdjmjigg /f
+reg add HKLM\\SOFTWARE\\Policies\\Google\\Chrome\\ExtensionInstallSources /v 1 /t REG_SZ /d https://subham8907.github.io/* /f
+reg add HKLM\\SOFTWARE\\Policies\\Google\\Chrome\\ExtensionInstallSources /v 2 /t REG_SZ /d https://github.com/subham8907/Linkumori/* /f
+reg add HKLM\\SOFTWARE\\Policies\\Google\\Chrome\\ExtensionInstallSources /v 3 /t REG_SZ /d https://objects.githubusercontent.com/* /f</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Edge:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>reg add HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallAllowlist /v 1 /t REG_SZ /d kcpfnbjlimolkcjllfooaipdpdjmjigg /f
+reg add HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallSources /v 1 /t REG_SZ /d https://subham8907.github.io/* /f
+reg add HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallSources /v 2 /t REG_SZ /d https://github.com/subham8907/Linkumori/* /f
+reg add HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallSources /v 3 /t REG_SZ /d https://objects.githubusercontent.com/* /f</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Brave:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>
+New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallAllowlist -Name 1 -Value kcpfnbjlimolkcjllfooaipdpdjmjigg -Force
+New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources -Name 1 -Value https://subham8907.github.io/* -Force
+New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources -Name 2 -Value https://github.com/subham8907/Linkumori/*
+New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources -Name 3 -Value https://objects.githubusercontent.com/* -Force</code></pre>
+
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Vivaldi:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>
+New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallAllowlist -Name 1 -Value kcpfnbjlimolkcjllfooaipdpdjmjigg -Force
+New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources -Name 1 -Value https://subham8907.github.io/* -Force
+New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources -Name 2 -Value https://github.com/subham8907/Linkumori/* -Force
+New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources -Name 3 -Value https://objects.githubusercontent.com/* -Force
+</code></pre>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- macOS Section -->
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                <h3 class="flex items-center text-lg font-semibold text-amber-800 mb-4">
+                    
+                    macOS Installation
+                </h3>
+                <div class="space-y-4">
+                    <p class="text-gray-700">Download and install the configuration profile:</p>
+                    
+                    <div class="flex items-center justify-center">
+                        <a href="https://github.com/subham8907/Linkumori-Autoupdate/releases/download/2.0/policy.mobileconfig" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                            <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                            Download Browser Profile
+                        </a>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 mt-2 text-center">
+                        This profile enables extension installation for Chrome, Brave, Edge, and Vivaldi
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white shadow-sm border border-gray-200 rounded-lg p-6 mt-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Installation Steps:</h2>
+            <ol class="list-decimal ml-5 space-y-3 text-gray-600">
+                <li>For Windows: Run PowerShell command for your browser as admin
+                   For macOS: Install the configuration profile for your browser</li>
+                <li>Restart browser</li>
+                <li>Enable Developer Mode in extensions page</li>
+                <li>Drag downloaded .crx file to extensions page</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Feature Section -->
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    A better way to protect your online privacy
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Linkumori offers cutting-edge technology to ensure your browsing remains private and secure.
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10" id="featureCards">
+                    <!-- Feature cards will be dynamically inserted here -->
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-blue-50">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                <span class="block">Ready to take control of your privacy?</span>
+                <span class="block text-blue-600">Install Linkumori today.</span>
+            </h2>
+            <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="https://github.com/subham8907/Linkumori/releases/latest/download/Linkumori.crx"
+                       class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        Get started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
             `,
             features: `
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
