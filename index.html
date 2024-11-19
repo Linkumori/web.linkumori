@@ -187,22 +187,67 @@ reg add HKLM\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallSources /v 3 
 
                         <div>
                             <p class="font-medium text-gray-900">Brave:</p>
-                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>
-New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallAllowlist -Name 1 -Value kcpfnbjlimolkcjllfooaipdpdjmjigg -Force
-New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources -Name 1 -Value https://subham8907.github.io/* -Force
-New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources -Name 2 -Value https://github.com/subham8907/Linkumori/*
-New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources -Name 3 -Value https://objects.githubusercontent.com/* -Force</code></pre>
-
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>reg add HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallAllowlist /v 1 /t REG_SZ /d kcpfnbjlimolkcjllfooaipdpdjmjigg /f
+reg add HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources /v 1 /t REG_SZ /d https://subham8907.github.io/* /f
+reg add HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources /v 2 /t REG_SZ /d https://github.com/subham8907/Linkumori/* /f
+reg add HKLM\\SOFTWARE\\Policies\\BraveSoftware\\Brave\\ExtensionInstallSources /v 3 /t REG_SZ /d https://objects.githubusercontent.com/* /f</code></pre>
                         </div>
 
                         <div>
                             <p class="font-medium text-gray-900">Vivaldi:</p>
-                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>
-New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallAllowlist -Name 1 -Value kcpfnbjlimolkcjllfooaipdpdjmjigg -Force
-New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources -Name 1 -Value https://subham8907.github.io/* -Force
-New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources -Name 2 -Value https://github.com/subham8907/Linkumori/* -Force
-New-ItemProperty -Path HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources -Name 3 -Value https://objects.githubusercontent.com/* -Force
-</code></pre>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>reg add HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallAllowlist /v 1 /t REG_SZ /d kcpfnbjlimolkcjllfooaipdpdjmjigg /f
+reg add HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources /v 1 /t REG_SZ /d https://subham8907.github.io/* /f
+reg add HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources /v 2 /t REG_SZ /d https://github.com/subham8907/Linkumori/* /f
+reg add HKLM\\SOFTWARE\\Policies\\Vivaldi\\ExtensionInstallSources /v 3 /t REG_SZ /d https://objects.githubusercontent.com/* /f</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Chromium:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallAllowlist /v 1 /t REG_SZ /d kcpfnbjlimolkcjllfooaipdpdjmjigg /f
+reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallSources /v 1 /t REG_SZ /d https://subham8907.github.io/* /f
+reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallSources /v 2 /t REG_SZ /d https://github.com/subham8907/Linkumori/* /f
+reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallSources /v 3 /t REG_SZ /d https://objects.githubusercontent.com/* /f</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Linux Installation:</p>
+                            <p class="text-gray-700">For Chrome:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo bash -c 'echo "kcpfnbjlimolkcjllfooaipdpdjmjigg" >> /etc/opt/chrome/policies/managed/extension_install_allowlist
+sudo bash -c 'echo "https://subham8907.github.io/*" >> /etc/opt/chrome/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://github.com/subham8907/Linkumori/*" >> /etc/opt/chrome/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://objects.githubusercontent.com/*" >> /etc/opt/chrome/policies/managed/extension_install_sources</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-700">For Chromium:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo bash -c 'echo "kcpfnbjlimolkcjllfooaipdpdjmjigg" >> /etc/opt/chromium/policies/managed/extension_install_allowlist
+sudo bash -c 'echo "https://subham8907.github.io/*" >> /etc/opt/chromium/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://github.com/subham8907/Linkumori/*" >> /etc/opt/chromium/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://objects.githubusercontent.com/*" >> /etc/opt/chromium/policies/managed/extension_install_sources</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-700">For Brave:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo bash -c 'echo "kcpfnbjlimolkcjllfooaipdpdjmjigg" >> /etc/brave/policies/managed/extension_install_allowlist
+sudo bash -c 'echo "https://subham8907.github.io/*" >> /etc/brave/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://github.com/subham8907/Linkumori/*" >> /etc/brave/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://objects.githubusercontent.com/*" >> /etc/brave/policies/managed/extension_install_sources</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-700">For Vivaldi:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo bash -c 'echo "kcpfnbjlimolkcjllfooaipdpdjmjigg" >> /etc/vivaldi/policies/managed/extension_install_allowlist
+sudo bash -c 'echo "https://subham8907.github.io/*" >> /etc/vivaldi/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://github.com/subham8907/Linkumori/*" >> /etc/vivaldi/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://objects.githubusercontent.com/*" >> /etc/vivaldi/policies/managed/extension_install_sources</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-700">For Edge:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo bash -c 'echo "kcpfnbjlimolkcjllfooaipdpdjmjigg" >> /etc/opt/microsoft/policies/managed/extension_install_allowlist
+sudo bash -c 'echo "https://subham8907.github.io/*" >> /etc/opt/microsoft/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://github.com/subham8907/Linkumori/*" >> /etc/opt/microsoft/policies/managed/extension_install_sources
+sudo bash -c 'echo "https://objects.githubusercontent.com/*" >> /etc/opt/microsoft/policies/managed/extension_install_sources</code></pre>
                         </div>
                     </div>
                 </div>
