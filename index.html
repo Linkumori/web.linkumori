@@ -52,7 +52,7 @@
                     <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
                         <a href="#home" class="nav-item border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-page="home">Home</a>
                         <a href="#features" class="nav-item border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-page="features">Features</a>
-                        <a href="#story" class="nav-item border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-page="story">Story</a>
+                        <a href="#privacypolicy" class="nav-item border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-page="privacypolicy">privacy policy</a>
                         <a href="#tech" class="nav-item border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-page="tech">Tech</a>
                         <a href="#learn" class="nav-item border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-page="learn">Learn More</a>
                         <a href="#dependencies" class="nav-item border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" data-page="dependencies">Dependencies</a>
@@ -70,7 +70,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="#home" class="mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" data-page="home">Home</a>
                 <a href="#features" class="mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" data-page="features">Features</a>
-                <a href="#story" class="mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" data-page="story">Story</a>
+                <a href="#privacypolicy" class="mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" data-page="privacypolicy">privacy policy</a>
                 <a href="#tech" class="mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" data-page="tech">Tech</a>
                 <a href="#learn" class="mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" data-page="learn">Learn More</a>
                 <a href="#dependencies" class="mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" data-page="dependencies">Dependencies</a>
@@ -98,7 +98,7 @@
             <div class="mt-8 md:mt-0 md:order-1">
                 <p class="text-center text-base text-gray-400">&copy; 2024 Subham Mahesh All rights reserved for applicable part only.</p>
                 <p class="text-center text-base text-gray-400 mt-2">
-                    <a href="#dependencies" class="nav-item text-gray-500 hover:text-gray-700" data-page="dependencies">Legal</a>
+                    <a href="#dependencies" class="nav-item text-gray-500 hover:text-gray-700" data-page="dependencies">Third party dependencies used on this webpage</a>
                 </p>
             </div>
         </div>
@@ -303,30 +303,22 @@ reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallSources /v 3 /t REG_
           
     </div>
             `,
-            story: `
-                <div class="px-4 py-6 sm:px-0">
-                    <h2 class="text-3xl font-extrabold text-gray-900">The Linkumori Saga</h2>
-                    <div class="mt-6 prose prose-blue prose-lg text-gray-500 mx-auto">
-                        <p>
-                            In the neon-drenched streets of Cyberopolis, where data flows like lifeblood through the veins of the city,
-                            a hidden menace lurks. Parasitic code fragments, known as "Trackers," latch onto the URLs of unsuspecting netizens,
-                            siphoning their digital essence and leaving a trail of compromised privacy in their wake.
-                        </p>
-                        <p><p>
-                            As the situation grew dire, a reclusive coding prodigy named Yuki Linkumori emerged from the shadows of the deep web.
-                            Yuki forged a powerful artifact: The Linkumori Engine. This mystical piece of code, infused with Yuki's genius and
-                            passion for digital freedom, had the power to cleanse URLs of their parasitic hitchhikers.
-                        </p>
-                        <p>
-                            Now, every time you activate the Linkumori extension, you become part of this grand narrative. You join the ranks
-                            of the URLPurifiers, wielding Yuki's engine to carve out spaces of privacy and freedom in the vast expanse of the internet.
-                        </p>
-                        <p>
-                            Remember: In this vast digital expanse, you are never truly alone. The spirit of Yuki Linkumori lives on in every
-                            cleaned URL, in every thwarted tracker. Stay vigilant, Digital Ronin. The battle for the soul of Cyberopolis never ends.
-                        </p>
-                    </div>
-                </div>
+            privacypolicy: `
+       <div className="bg-white">
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-sm text-gray-500 mb-4">© 2024 Subham Mahesh All rights reserved for applicable part only.</p>
+          <p className="text-sm text-gray-500 mb-4">
+            This website is hosted as GitHub Pages  and is subject to GitHub's 
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" 
+               className="text-blue-600 hover:text-blue-800 ml-1">
+              Privacy Policy
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
             `,
             tech: `
                 <div class="px-4 py-6 sm:px-0">
@@ -347,9 +339,9 @@ reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallSources /v 3 /t REG_
                             Linkumori employs sophisticated algorithms to identify and remove tracking parameters from URLs in real-time.
                             This process is optimized to handle a wide variety of URL structures without impacting page load times.
                         </p>
-                        <h3>History API Integration</h3>
+                        <h3>Hiprivacypolicy API Integration</h3>
                         <p>
-                            To handle dynamic content and single-page applications, Linkumori integrates with the browser's History API.
+                            To handle dynamic content and single-page applications, Linkumori integrates with the browser's Hiprivacypolicy API.
                             This allows us to clean URLs even when they change without a full page reload, ensuring comprehensive protection.
                         </p>
                     </div>
@@ -518,7 +510,6 @@ reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallSources /v 3 /t REG_
             `
         };
 
-        // Feature data
         const features = [
             {
                 icon: 'code',
@@ -534,11 +525,6 @@ reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallSources /v 3 /t REG_
                 icon: 'history',
                 title: 'History API Integration',
                 description: 'Employs the replaceState method to clean URLs dynamically, tackling websites that use injected tracking URLs without page reloads.'
-            },
-            {
-                icon: 'lock',
-                title: 'User Privacy Protection',
-                description: 'Ensures zero data transmission when downloaded directly from GitHub, maintaining complete user privacy and control.'
             },
             {
                 icon: 'database',
