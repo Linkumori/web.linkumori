@@ -1,1 +1,3 @@
-www.linkumori.com
+Host/Name: www
+Type: CNAME
+Value/Target: linkumori.com
