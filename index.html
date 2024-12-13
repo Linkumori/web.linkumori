@@ -83,13 +83,17 @@
     </main>
 
     <div class="persistent-buttons fixed bottom-0 left-0 right-0 lg:left-auto bg-white shadow-md p-4 flex justify-around items-center lg:w-auto space-x-4 lg:space-x-0 lg:space-y-4">
-        <a href="https://github.com/Linkumori/Linkumori-Extension/releases/latest/download/Linkumori.crx" class="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-            <i data-lucide="download" class="mr-2 h-4 w-4"></i>
-            Install
+        <a href="https://chromewebstore.google.com/detail/linkumori-clean-urls/kcpfnbjlimolkcjllfooaipdpdjmjigg" class="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+            <i data-lucide="chrome" class="mr-2 h-4 w-4"></i>
+            Install and Update through chrome Web Store 
         </a>
-        <a href="https://github.com/Linkumori/Linkumori-Extension" class="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50">
+        <a href="https://github.com/Linkumori/Linkumori-Extension/releases/latest/download/Linkumori.crx" class="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50">
+            <i data-lucide="download" class="mr-2 h-4 w-4"></i>
+            Install and Update through github
+        </a>
+        <a href="https://github.com/Linkumori/Linkumori-Extension" class="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-600 bg-gray-50 hover:bg-gray-100">
             <i data-lucide="github" class="mr-2 h-4 w-4"></i>
-            GitHub
+            GitHub Repository
         </a>
     </div>
 
@@ -127,19 +131,23 @@
                             Linkumori is your shield against invasive tracking and data collection. 
                             Clean your URLs, safeguard your digital footprint, and browse with confidence.
                         </p>
-                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                            <div class="rounded-md shadow">
-                                <a href="https://github.com/Linkumori/Linkumori-Extension/releases/latest/download/Linkumori.crx"
-                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
-                                    <i data-lucide="download" class="mr-2 h-4 w-4"></i> Install Linkumori
-                                </a>
-                            </div>
-                            <div class="mt-3 sm:mt-0 sm:ml-3">
-                                <a href="https://github.com/Linkumori/Linkumori-Extension"
-                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-                                    <i data-lucide="github" class="mr-2 h-4 w-4"></i> View on GitHub
-                                </a>
-                            </div>
+                        <!-- Hero Buttons -->
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start space-x-4">
+                            <a href="https://chromewebstore.google.com/detail/linkumori-clean-urls/kcpfnbjlimolkcjllfooaipdpdjmjigg" 
+                               class="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                                <i data-lucide="chrome" class="mr-2 h-4 w-4"></i>
+                            Install and Update through chrome Web Store 
+                            </a>
+                            <a href="https://github.com/Linkumori/Linkumori-Extension/releases/latest/download/Linkumori.crx" 
+                               class="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50">
+                                <i data-lucide="download" class="mr-2 h-4 w-4"></i>
+                             Install and Update through github
+                            </a>
+                            <a href="https://github.com/Linkumori/Linkumori-Extension" 
+                               class="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-600 bg-gray-50 hover:bg-gray-100">
+                                <i data-lucide="github" class="mr-2 h-4 w-4"></i>
+                                GitHub Repository
+                            </a>
                         </div>
                     </div>
                 </main>
@@ -154,6 +162,7 @@
             </svg>
         </div>
     </div>
+</div>
 
     <!-- Installation Guide Section -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -215,6 +224,108 @@ reg add HKLM\\SOFTWARE\\Policies\\Chromium\\ExtensionInstallSources /v 3 /t REG_
 
                         <div>
                           
+            </div>
+<!-- Linux Section -->
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                <h3 class="flex items-center text-lg font-semibold text-amber-800 mb-4">
+                    <i data-lucide="linux" class="w-5 h-5 mr-2"></i>
+                    Linux Installation
+                </h3>
+                <div class="space-y-4">
+                    <p class="text-gray-700">Create and configure policy files:</p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-gray-900">Chrome:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo mkdir -p /etc/opt/chrome/policies/managed
+sudo tee /etc/opt/chrome/policies/managed/extension_policy.json > /dev/null << 'EOF'
+{
+  "ExtensionInstallAllowlist": [
+    "kcpfnbjlimolkcjllfooaipdpdjmjigg"
+  ],
+  "ExtensionInstallSources": [
+    "https://linkumori.com/*",
+    "https://github.com/Linkumori/Linkumori-Extension/*",
+    "https://objects.githubusercontent.com/*"
+  ]
+}
+EOF
+sudo chmod 644 /etc/opt/chrome/policies/managed/extension_policy.json</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Edge:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo mkdir -p /etc/microsoft-edge/policies/managed
+sudo tee /etc/microsoft-edge/policies/managed/extension_policy.json > /dev/null << 'EOF'
+{
+  "ExtensionInstallAllowlist": [
+    "kcpfnbjlimolkcjllfooaipdpdjmjigg"
+  ],
+  "ExtensionInstallSources": [
+    "https://linkumori.com/*",
+    "https://github.com/Linkumori/Linkumori-Extension/*",
+    "https://objects.githubusercontent.com/*"
+  ]
+}
+EOF
+sudo chmod 644 /etc/microsoft-edge/policies/managed/extension_policy.json</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Brave:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo mkdir -p /etc/brave/policies/managed
+sudo tee /etc/brave/policies/managed/extension_policy.json > /dev/null << 'EOF'
+{
+  "ExtensionInstallAllowlist": [
+    "kcpfnbjlimolkcjllfooaipdpdjmjigg"
+  ],
+  "ExtensionInstallSources": [
+    "https://linkumori.com/*",
+    "https://github.com/Linkumori/Linkumori-Extension/*",
+    "https://objects.githubusercontent.com/*"
+  ]
+}
+EOF
+sudo chmod 644 /etc/brave/policies/managed/extension_policy.json</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Vivaldi:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo mkdir -p /etc/vivaldi/policies/managed
+sudo tee /etc/vivaldi/policies/managed/extension_policy.json > /dev/null << 'EOF'
+{
+  "ExtensionInstallAllowlist": [
+    "kcpfnbjlimolkcjllfooaipdpdjmjigg"
+  ],
+  "ExtensionInstallSources": [
+    "https://linkumori.com/*",
+    "https://github.com/Linkumori/Linkumori-Extension/*",
+    "https://objects.githubusercontent.com/*"
+  ]
+}
+EOF
+sudo chmod 644 /etc/vivaldi/policies/managed/extension_policy.json</code></pre>
+                        </div>
+
+                        <div>
+                            <p class="font-medium text-gray-900">Chromium:</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code>sudo mkdir -p /etc/chromium/policies/managed
+sudo tee /etc/chromium/policies/managed/extension_policy.json > /dev/null << 'EOF'
+{
+  "ExtensionInstallAllowlist": [
+    "kcpfnbjlimolkcjllfooaipdpdjmjigg"
+  ],
+  "ExtensionInstallSources": [
+    "https://linkumori.com/*",
+    "https://github.com/Linkumori/Linkumori-Extension/*",
+    "https://objects.githubusercontent.com/*"
+  ]
+}
+EOF
+sudo chmod 644 /etc/chromium/policies/managed/extension_policy.json</code></pre>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- macOS Section -->
